@@ -7,7 +7,7 @@ class Quiz {
   final int timeLimet;
   final List<Quesion> quisions;
   final DateTime? createdAt;
-  final DateTime? updatesdAt;
+  final DateTime? updatedAt;
 
   Quiz({
     required this.id,
@@ -16,7 +16,7 @@ class Quiz {
     required this.timeLimet,
     required this.quisions,
     this.createdAt,
-    this.updatesdAt,
+    this.updatedAt,
   });
 
   factory Quiz.fromMap(String id, Map<String, dynamic> map) {
@@ -28,8 +28,8 @@ class Quiz {
       quisions: ((map['quisions'] ?? []) as List)
           .map((e) => Quesion.fromMap(e))
           .toList(),
-      createdAt: map['createdAt']?.toData(),
-      updatesdAt: map['updatedAt']?.toData(),
+      createdAt: map['createdAt']?.toDate(),
+      updatedAt: map['updatedAt']?.toDate(),
     );
   }
 
@@ -41,14 +41,14 @@ class Quiz {
       'timeLimit': timeLimet,
       'quisions': quisions,
       'createdAt': createdAt ?? DateTime.now(),
-      'updatedAt': updatesdAt ?? DateTime.now(),
+      'updatedAt': updatedAt ?? DateTime.now(),
     };
   }
 
   Quiz copyWith({
     String? title,
     String? categoryId,
-    int? timeLimit,
+    int? timeLimet,
     List<Quesion>? quisions,
   }) {
     return Quiz(
@@ -58,7 +58,7 @@ class Quiz {
       timeLimet: timeLimet ?? this.timeLimet,
       quisions: quisions ?? this.quisions,
       createdAt: createdAt,
-      updatesdAt: DateTime.now(),
+      updatedAt: DateTime.now(),
     );
   }
 }

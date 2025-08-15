@@ -28,7 +28,7 @@ class Category {
     };
   }
 
-  Category copywith({String? name, String? discription}) {
+  Category copyWith({String? name, String? description}) {
     return Category(
       id: id,
       name: name ?? this.name,
