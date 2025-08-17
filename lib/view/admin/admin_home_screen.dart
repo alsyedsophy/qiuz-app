@@ -131,6 +131,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
               SizedBox(height: 16),
               Text(
                 title,
+                maxLines: 1,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
